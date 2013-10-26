@@ -1,0 +1,16 @@
+---
+-
+  name: zshell configuration
+  hosts: local
+  gather_facts: false
+  tasks:
+
+    - name: update oh-my-zsh
+      git: >
+        repo=https://github.com/robbyrussell/oh-my-zsh.git
+        dest=~/.oh-my-zsh
+
+    - name: setup zshrc file
+      copy: >
+        dest=~/.zshrc
+        src=templates/zshrc
