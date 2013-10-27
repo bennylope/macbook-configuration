@@ -3,6 +3,7 @@
 - include: libraries.yml
 - include: tools.yml
 - include: zsh.yml
+- include: shell.yml
 - include: vim.yml
 - include: python.yml
 - include: ruby.yml

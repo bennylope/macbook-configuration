@@ -1,19 +1,12 @@
 # Personal computer configuration.
 
-Run:
+First install Homebrew. Then use Homebrew to install ansible.
 
-    ansible-playbook install.yaml
+    brew install ansible
 
-### Homebrew packages
+Now we're ready to run the configuration.
 
-These are all taken care of by the `homebrew.yaml` playbook.
+    ansible-playbook install.yml -K
 
-### Configuration files
-
-* zsh
-* vim
-* ssh?
-
-### Additional dev items
-
-* Ruby version management
+If it's your first time, go brew some coffee or tea because this will
+take some time building packages.

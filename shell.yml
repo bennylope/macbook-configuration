@@ -1,0 +1,19 @@
+---
+-
+  name: configure default shell
+  hosts: local
+  gather_facts: false
+  sudo: true
+  tasks:
+
+    - name: add zsh to list of shells
+      lineinfile: >
+        backup=yes
+        dest=/etc/shells
+        regexp=^/usr/local/bin/zsh
+        line=/usr/local/bin/zsh
+
+    - name: change to zsh
+      # TODO user a variable for username
+      shell: chsh -s /usr/local/bin/zsh benlopatin
+
