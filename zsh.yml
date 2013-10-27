@@ -5,6 +5,9 @@
   gather_facts: false
   tasks:
 
+    - name: install zsh
+      homebrew: name=zsh state=present
+
     - name: update oh-my-zsh
       git: >
         repo=https://github.com/robbyrussell/oh-my-zsh.git

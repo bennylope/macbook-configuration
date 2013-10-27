@@ -5,6 +5,12 @@
   gather_facts: false
   tasks:
 
+    - name: install vim
+      homebrew: name={{ item }} state=present
+      with_items:
+        - vim
+        - macvim
+
       # TODO: deal with preexisting .vim folder
     - name: install janus
       git: >

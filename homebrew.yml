@@ -1,32 +1,9 @@
 ---
 -
-  name: homebrew based applications
+  name: homebrew configuration
   hosts: local
   gather_facts: false
   tasks:
+
     - name: update homebrew
       command: brew update
-    - name: install homebrew packages
-      homebrew: name={{ item }} state=present
-      with_items:
-        - vim
-        - macvim
-        - redis
-        - mercurial
-        - memcached
-        - tmux
-        - tree
-        - augeas
-        - haskell-platform
-        - libevent
-        - libmemcached
-        - libxml2
-        - readline
-        - s3cmd
-        - siege
-        - tarsnap
-        - wget
-        - zsh
-        - go
-        - elasticsearch
-    - local_action: osx_say msg="Homebrew packaging complete" voice=Zarvox

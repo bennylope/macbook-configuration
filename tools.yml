@@ -1,0 +1,19 @@
+---
+-
+  name: CLI tools
+  hosts: local
+  gather_facts: false
+  tasks:
+
+    - name: install CLI tools
+      homebrew: name={{ item }} state=present
+      with_items:
+        - mercurial
+        - tmux
+        - tree
+        - augeas
+        - readline
+        - s3cmd
+        - siege
+        - tarsnap
+        - wget
