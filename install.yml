@@ -2,3 +2,6 @@
 - include: homebrew.yml
 - include: zsh.yml
 - include: vim.yml
+- include: python.yml
+- include: ruby.yml
+- include: node.yml

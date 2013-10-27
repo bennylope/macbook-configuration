@@ -28,7 +28,5 @@
         - wget
         - zsh
         - go
-        - rbenv
-        - ruby-build
         - elasticsearch
     - local_action: osx_say msg="Homebrew packaging complete" voice=Zarvox
