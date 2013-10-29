@@ -18,3 +18,4 @@
         - tarsnap
         - wget
         - heroku-toolbelt
+        - ack
