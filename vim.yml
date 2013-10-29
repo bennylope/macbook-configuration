@@ -44,10 +44,10 @@
       file: >
         state=link
         dest=~/.vimrc.after
-        src=~/.my-janus/vimrc.before
+        src=~/.my-janus/vimrc.after
 
     - name: link gvimrc.after
       file: >
         state=link
         dest=~/.gvimrc.after
-        src=~/.my-janus/gvimrc.before
+        src=~/.my-janus/gvimrc.after
