@@ -11,3 +11,8 @@
         - libevent
         - libmemcached
         - libxml2
+
+    - name: unlink keg only
+      command: brew unlink {{ item}}
+      with_items:
+        - libxml2
