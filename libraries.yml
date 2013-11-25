@@ -11,6 +11,7 @@
         - libevent
         - libmemcached
         - libxml2
+        - gdal
 
     - name: unlink keg only
       command: brew unlink {{ item}}
