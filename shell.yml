@@ -2,7 +2,7 @@
 -
   name: configure default shell
   hosts: local
-  gather_facts: false
+  gather_facts: true
   sudo: true
   tasks:
 
@@ -14,6 +14,4 @@
         line=/usr/local/bin/zsh
 
     - name: change to zsh
-      # TODO user a variable for username
-      shell: chsh -s /usr/local/bin/zsh benlopatin
-
+      shell: chsh -s /usr/local/bin/zsh {{ ansible_env.USER }}
