@@ -11,3 +11,8 @@
         - redis
         - memcached
         - elasticsearch
+
+    - name: Add my plsql config file
+      copy: >
+        dest=~/.psqlrc
+        src=templates/psqlrc
