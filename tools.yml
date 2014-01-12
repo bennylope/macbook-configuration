@@ -22,3 +22,8 @@
         - hub
         - ctags
         - sloccount
+
+    - name: Install npm based tools
+      npm: name={{ item }} global=yes state=present
+      with_items:
+        - dalek-cli
