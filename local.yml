@@ -1,0 +1,11 @@
+---
+- hosts: local
+  roles:
+    - homebrew
+    - common
+    - zsh
+    - vim
+    - python
+    - ruby
+    - node
+    - dev

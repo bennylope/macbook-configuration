@@ -1,0 +1,19 @@
+---
+- name: install CLI tools
+  homebrew: name={{ item }} state=present
+  with_items:
+    - mercurial
+    - tmux
+    - tree
+    - augeas
+    - readline
+    - s3cmd
+    - siege
+    - tarsnap
+    - wget
+    - heroku-toolbelt
+    - ack
+    - hub
+    - ctags
+    - sloccount
+  when: ansible_os_family == 'Darwin'

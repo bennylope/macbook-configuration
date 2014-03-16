@@ -1,0 +1,30 @@
+---
+- name: install zsh
+  homebrew: name=zsh state=present
+  when: ansible_os_family == 'Darwin'
+
+- name: update oh-my-zsh
+  git: >
+    repo=https://github.com/robbyrussell/oh-my-zsh.git
+    dest=~/.oh-my-zsh
+
+- name: setup zshrc file
+  copy: >
+    dest=~/.zshrc
+    src=zshrc
+
+- name: add zsh to list of shells
+  lineinfile: >
+    backup=yes
+    dest=/etc/shells
+    regexp=^/usr/local/bin/zsh
+    line=/usr/local/bin/zsh
+  when: ansible_os_family == 'Darwin'
+
+- name: change to zsh (Mac)
+  shell: chsh -s /usr/local/bin/zsh {{ ansible_env.USER }}
+  when: ansible_os_family == 'Darwin'
+
+- name: change to zsh (Ubuntu)
+  shell: chsh -s /usr/bin/zsh {{ ansible_env.USER }}
+  when: ansible_os_family == 'Ubuntu'

@@ -1,0 +1,30 @@
+---
+- name: install development libraries (Mac)
+  homebrew: name={{ item }} state=present
+  with_items:
+    - libevent
+    - libmemcached
+    - libxml2
+    - gdal
+  when: ansible_os_family == 'Darwin'
+
+- name: unlink keg only
+  command: brew unlink {{ item}}
+  with_items:
+    - libxml2
+  when: ansible_os_family == 'Darwin'
+
+- name: install backing services (Mac)
+  homebrew: name={{ item }} state=present
+  with_items:
+    - redis
+    - memcached
+    - elasticsearch
+  when: ansible_os_family == 'Darwin'
+
+- name: install additional languages
+  homebrew: name={{ item }} state=present
+  with_items:
+    - go
+    - haskell-platform
+  when: ansible_os_family == 'Darwin'

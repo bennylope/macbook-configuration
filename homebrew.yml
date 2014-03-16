@@ -1,9 +1,0 @@
----
--
-  name: homebrew configuration
-  hosts: local
-  gather_facts: false
-  tasks:
-
-    - name: update homebrew
-      command: brew update

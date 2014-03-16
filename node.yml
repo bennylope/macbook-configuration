@@ -1,9 +1,0 @@
----
--
-  name: sets up node.js
-  hosts: local
-  gather_facts: false
-  tasks:
-
-    - name: install node
-      homebrew: name=node state=present
