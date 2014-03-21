@@ -8,3 +8,7 @@
   command: >
     /usr/local/bin/pip install virtualenv
     creates=/usr/local/bin/virtualenv
+
+- name: install Jedi
+  pip: name=jedi
+  sudo: true
