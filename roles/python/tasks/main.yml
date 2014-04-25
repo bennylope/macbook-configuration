@@ -12,3 +12,8 @@
 - name: install Jedi
   pip: name=jedi
   sudo: true
+
+- name: Setup pip configuration
+  copy: >
+    dest=~/.pip/pip.conf
+    src=pip.conf
