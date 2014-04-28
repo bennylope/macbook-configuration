@@ -2,9 +2,19 @@
 
 First install Homebrew. Then use Homebrew to install ansible.
 
-    brew install ansible
+    $ brew install ansible
 
-Now we're ready to run the configuration.
+Run the bootstrap script:
+
+    $ ./bootstrap.sh
+
+The script `configure` is now in `/usr/local/bin` and you can just
+execute that script:
+
+    $ configure
+
+It's a shortcut to this command, as it would be run from the
+configuration directory:
 
     ansible-playbook install.yml -K
 
