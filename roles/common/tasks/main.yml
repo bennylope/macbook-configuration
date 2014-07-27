@@ -16,6 +16,7 @@
     - hub
     - ctags
     - sloccount
+    - autoenv
   when: ansible_os_family == 'Darwin'
 
 - name: Add convenience script
