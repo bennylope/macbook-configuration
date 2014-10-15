@@ -16,7 +16,7 @@ set -e
 # if either of the conditions are met, install dev tools
 if [[ $(/usr/bin/gcc 2>&1) =~ "no developer tools were found" ]] || [[ ! -x /usr/bin/gcc ]]; then
     echo "Info   | Install   | xcode"
-    eval xcode-select --install
+    xcode-select --install
 fi
 
 # Download and install Homebrew
