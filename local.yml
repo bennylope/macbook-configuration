@@ -5,6 +5,7 @@
     - common
     - zsh
     - vim
+    - tmux
     - python
     - ruby
     - node
