@@ -37,7 +37,9 @@
 - name: Add general desktop tools
   homebrew_cask: name={{ item }} state=present
   with_items:
+    - cloak
     - google-chrome
+    - libreoffice
     - firefox
     - pycharm
     - sequel-pro
