@@ -34,30 +34,14 @@
   when: ansible_os_family == 'Darwin'
   tags: dev
 
-- name: Add general desktop tools
+- name: Add development desktop tools
   homebrew_cask: name={{ item }} state=present
   with_items:
-    - cloak
-    - google-chrome
-    - libreoffice
-    - firefox
     - pycharm
     - sequel-pro
-    - dash
-    - alfred
-    - flux
-    - balsamiq-mockups
-    - cleanmymac
     - phpstorm
     - webstorm
     - postico
-    - caffeine
-    - airfoil
-    - dropbox
-    - send-to-kindle
-    - iterm2
-    - skype
-    - transmit
     - atom
   when: ansible_os_family == 'Darwin'
   tags: dev

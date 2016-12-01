@@ -1,7 +1,7 @@
 ---
 - hosts: local
   roles:
-    #- homebrew
+    - homebrew
     - utils
     - tmux
     - git
@@ -14,4 +14,5 @@
     - haskell
     - node
     - dev
+    - common
     #- ruby

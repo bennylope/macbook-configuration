@@ -1,23 +1,36 @@
 ---
-- name: install CLI tools
-  homebrew: name={{ item }} state=present
+- name: Add browsers
+  homebrew_cask: name={{ item }} state=present
   with_items:
-    - mercurial
-    - tmux
-    - tree
-    - augeas
-    - readline
-    - s3cmd
-    - siege
-    - tarsnap
-    - wget
-    - heroku-toolbelt
-    - ack
-    - hub
-    - ctags
-    - sloccount
-    - autoenv
+    - google-chrome
+    - firefox
+    - opera
   when: ansible_os_family == 'Darwin'
+  tags: common
 
-- name: Add convenience script
-  copy: src=configure dest=/usr/local/bin/configure
+- name: Add desktop utility tools
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - cloak
+    - dash
+    - alfred
+    - flux
+    - cleanmymac
+    - caffeine
+    - airfoil
+  when: ansible_os_family == 'Darwin'
+  tags: common
+
+- name: Add general desktop tools
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - iterm2
+    - libreoffice
+    - balsamiq-mockups
+    - airfoil
+    - dropbox
+    - send-to-kindle
+    - skype
+    - transmit
+  when: ansible_os_family == 'Darwin'
+  tags: common
