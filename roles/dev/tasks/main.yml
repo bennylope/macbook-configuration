@@ -8,25 +8,25 @@
     - gdal
   when: ansible_os_family == 'Darwin'
 
-- name: unlink keg only
-  command: brew unlink {{ item}}
-  with_items:
-    - libxml2
-  when: ansible_os_family == 'Darwin'
+  #- name: unlink keg only
+  #command: brew unlink {{ item}}
+  #with_items:
+  #  - libxml2
+  #when: ansible_os_family == 'Darwin'
 
 - name: install backing services (Mac)
   homebrew: name={{ item }} state=present
   with_items:
     - redis
     - memcached
-    - elasticsearch
+      #- elasticsearch
   when: ansible_os_family == 'Darwin'
 
 # These are libraries that are installed but the Homebrew *module* fails on;
 # not Homebrew by itself. At the end b/c they will fail but that's okay.
 # They're here to track config until the problem can be identified and solved.
-- name: install problem libraries (Mac)
-  homebrew: name={{ item }} state=present
-  with_items:
-    - libgeoip
-  when: ansible_os_family == 'Darwin'
+#- name: install problem libraries (Mac)
+#  homebrew: name={{ item }} state=present
+#  with_items:
+#    - libgeoip
+#  when: ansible_os_family == 'Darwin'

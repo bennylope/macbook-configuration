@@ -1,10 +1,8 @@
 ---
 - name: Install Node (Mac)
-  homebrew: name=node state=present
-  when: ansible_os_family == 'Darwin'
-
-- name: Install npm based tools
-  npm: name={{ item }} global=yes state=present
+  homebrew: name={{ item }} state=present
   with_items:
-    - dalek-cli
+    - node
+    - yarn
   when: ansible_os_family == 'Darwin'
+  tags: node

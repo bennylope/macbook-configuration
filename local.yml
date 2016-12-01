@@ -12,7 +12,6 @@
     - python
     - postgresql
     - haskell
- 
+    - node
+    - dev
     #- ruby
-    #- node
-    #- dev
