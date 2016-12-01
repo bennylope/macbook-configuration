@@ -7,6 +7,7 @@
     - libxml2
     - gdal
   when: ansible_os_family == 'Darwin'
+  tags: dev
 
   #- name: unlink keg only
   #command: brew unlink {{ item}}
@@ -21,6 +22,40 @@
     - memcached
       #- elasticsearch
   when: ansible_os_family == 'Darwin'
+  tags: dev
+
+- name: Virtualization for dev
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - virtualbox
+    - vmware-fusion
+    - vagrant
+  when: ansible_os_family == 'Darwin'
+  tags: dev
+
+- name: Add general desktop tools
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - google-chrome
+    - firefox
+    - pycharm
+    - sequel-pro
+    - dash
+    - alfred
+    - flux
+    - balsamiq-mockups
+    - cleanmymac
+    - phpstorm
+    - webstorm
+    - postico
+    - caffeine
+    - dropbox
+    - iterm2
+    - skype
+    - transmit
+    - atom
+  when: ansible_os_family == 'Darwin'
+  tags: dev
 
 # These are libraries that are installed but the Homebrew *module* fails on;
 # not Homebrew by itself. At the end b/c they will fail but that's okay.
