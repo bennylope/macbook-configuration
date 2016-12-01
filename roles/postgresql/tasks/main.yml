@@ -6,3 +6,10 @@
 - name: Add psql config
   copy: src=psqlrc dest=~/.psqlrc
   tags: postgres
+
+- name: Install PostgreSQL pref pane
+  homebrew_cask:
+    name: postgrespreferencepane
+    state: installed
+  when: ansible_os_family == 'Darwin'
+  tags: postgres
