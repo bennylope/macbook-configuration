@@ -4,19 +4,27 @@
   with_items:
     - vim
   when: ansible_os_family == 'Darwin'
+  tags: vim
 
 - name: tap neovim (Mac)
   homebrew_tap:
     name: neovim/neovim
     state: present
   when: ansible_os_family == 'Darwin'
+  tags: vim
 
 - name: install neovim (Mac)
   homebrew: name={{ item }} state=present
   with_items:
     - neovim
   when: ansible_os_family == 'Darwin'
+  tags: vim
 
 - name: install vim (Ubuntu)
   apt: pkg=vim state=present
   when: ansible_os_family == 'Ubuntu'
+  tags: vim
+
+- name: add vimrc
+  copy: src=basic.vim dest=~/.vimrc
+  tags: vim
