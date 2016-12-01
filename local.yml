@@ -11,9 +11,8 @@
     - docker
     - python
     - postgresql
+    - haskell
  
-    #- common
-    #- python
     #- ruby
     #- node
     #- dev

@@ -1,0 +1,8 @@
+---
+- name: install Haskell (Mac)
+  homebrew: name={{ item }} state=present
+  with_items:
+    - ghc
+    - haskell-stack
+  when: ansible_os_family == 'Darwin'
+  tags: haskell
