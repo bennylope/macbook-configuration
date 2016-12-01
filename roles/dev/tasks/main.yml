@@ -6,6 +6,7 @@
     - libmemcached
     - libxml2
     - gdal
+    - gmp
   when: ansible_os_family == 'Darwin'
   tags: dev
 
