@@ -17,6 +17,10 @@
     state: linked
   tags: python
 
+- name: Tap older Python repo
+  homebrew_tap: name=derekkwok/python
+  tags: python
+
 - name: Install Python versions
   homebrew: name={{ item }} state=present
   with_items:
