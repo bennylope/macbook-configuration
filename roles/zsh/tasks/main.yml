@@ -21,20 +21,12 @@
   shell: chsh -s /usr/bin/zsh {{ ansible_env.USER }}
   when: ansible_os_family == 'Ubuntu'
 
-- name: install prezto
-  git: repo=https://github.com/bennylope/prezto.git
-       dest=~/.zprezto
-       version=4f19700919c8ebbaf75755fc0d03716d13183f49
+- name: install oh-my-zsh
+  git: repo=https://github.com/robbyrussell/oh-my-zsh.git
+       dest=~/.oh-my-zsh
        recursive=yes
   tags: zsh
 
 - name: add zshrc file
   copy: src=zshrc dest=~/.zshrc
-  tags: zsh
-
-- name: Link zpreztorc
-  file:
-    dest: ~/.zpreztorc
-    src: ~/.zprezto/runcoms/zpreztorc
-    state: link
   tags: zsh
