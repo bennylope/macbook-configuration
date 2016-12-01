@@ -1,16 +1,24 @@
 ---
-- name: install pip
-  command: >
-    /usr/bin/easy_install pip
-    creates=/usr/local/bin/pip
-
 - name: install virtualenv
   command: >
     /usr/local/bin/pip install virtualenv
     creates=/usr/local/bin/virtualenv
 
-- name: install Jedi
-  pip: name=jedi
+- name: Install OpenSSL for Python
+  homebrew:
+    name: openssl
+    state: linked
+
+- name: Install Python versions
+  homebrew: name={{ item }} state=present
+  with_items:
+    - python
+    - python3
+
+- name: Add pip directory
+  file:
+    name: ~/.pip
+    state: directory
 
 - name: Setup pip configuration
   copy: >

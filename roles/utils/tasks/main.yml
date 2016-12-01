@@ -1,0 +1,19 @@
+---
+- name: install CLI tools
+  homebrew: name={{ item }} state=present
+  with_items:
+    - tree
+    - readline
+    - wget
+    - ack
+    - ctags
+    - sloccount
+    - autoenv
+    - ripgrep
+    #- hub
+    #- s3cmd
+    #- siege
+  when: ansible_os_family == 'Darwin'
+
+- name: Add convenience script
+  copy: src=configure dest=/usr/local/bin/configure

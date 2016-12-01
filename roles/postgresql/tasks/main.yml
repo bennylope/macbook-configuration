@@ -1,0 +1,8 @@
+---
+- name: Install Postgres.app (Mac)
+  homebrew_cask: name=postgres state=present install_options="appdir=/Applications"
+  tags: postgres
+
+- name: Add psql config
+  copy: src=psqlrc dest=~/.psqlrc
+  tags: postgres

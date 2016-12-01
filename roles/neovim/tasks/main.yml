@@ -1,0 +1,10 @@
+---
+- name: install vim (Mac)
+  homebrew:
+      name: "{{ item }}"
+      state: latest
+  with_items:
+    - neovim
+  when: ansible_os_family == 'Darwin'
+  tags: neovim
+

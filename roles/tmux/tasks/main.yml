@@ -1,8 +1,27 @@
 ---
-- name: install additional tmux
+- name: install tmux
   homebrew:
     name: "{{ item }}"
-    state: present
+    state: latest
   with_items:
     - tmux
   when: ansible_os_family == 'Darwin'
+  tags: tmux
+
+- name: Add tmux.conf
+  copy: src=tmux.conf dest=~/.tmux.conf
+  tags: tmux
+
+
+- name: Add .tmux plugins directory
+  file:
+    name: ~/.tmux/plugins
+    state: directory
+    recurse: yes
+  tags: tmux
+
+- name: Add tmux plugin manager
+  git: repo=https://github.com/tmux-plugins/tpm.git
+       dest=~/.tmux/plugins/tpm
+       version=v3.0.0
+  tags: tmux
