@@ -27,6 +27,12 @@
        recursive=yes
   tags: zsh
 
+- name: Ensure oh-my-zsh-custom directory
+  file:
+    name: ~/.oh-my-zsh
+    state: directory
+  tags: zsh
+
 - name: add zshrc file
   copy: src=zshrc dest=~/.zshrc
   tags: zsh
