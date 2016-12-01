@@ -25,6 +25,35 @@
   when: ansible_os_family == 'Ubuntu'
   tags: vim
 
+- name: add vim autoload dir
+  file:
+    name: ~/.vim/autoload
+    state: directory
+    recurse: yes
+  tags: vim
+
+- name: add vim bundle dir
+  file:
+    name: ~/.vim/bundle
+    state: directory
+    recurse: yes
+  tags: vim
+
+- name: install Pathogen
+  copy:
+    src: pathogen-24.vim
+    dest: ~/.vim/autoload/pathogen.vim
+  tags: vim
+
 - name: add vimrc
   copy: src=basic.vim dest=~/.vimrc
+  tags: vim
+
+- name: install vim plugins
+  git: repo={{ item.repo}} dest=~/.vim/bundle/{{ item.name }}
+  with_items:
+    - { repo: "https://github.com/scrooloose/nerdtree.git", name: "nerdtree" }
+    - { repo: "https://github.com/ctrlpvim/ctrlp.vim.git", name: "ctrlp" }
+    - { repo: "https://github.com/vim-syntastic/syntastic.git", name: "syntastic" }
+    - { repo: "https://github.com/altercation/vim-colors-solarized.git", name: "solarized" }
   tags: vim
