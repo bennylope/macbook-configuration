@@ -20,6 +20,7 @@
   with_items:
     - redis
     - memcached
+    - mysql
       #- elasticsearch
   when: ansible_os_family == 'Darwin'
   tags: dev
@@ -49,7 +50,9 @@
     - webstorm
     - postico
     - caffeine
+    - airfoil
     - dropbox
+    - send-to-kindle
     - iterm2
     - skype
     - transmit
