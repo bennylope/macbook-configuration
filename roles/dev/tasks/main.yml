@@ -32,6 +32,7 @@
     - virtualbox
     - vmware-fusion
     - vagrant
+    - docker
   when: ansible_os_family == 'Darwin'
   tags: dev
 
