@@ -5,6 +5,8 @@
     - google-chrome
     - firefox
     - opera
+    - mailmate
+    - postbox
   when: ansible_os_family == 'Darwin'
   tags: common
 
@@ -19,6 +21,8 @@
     - caffeine
     - airfoil
     - smcfancontrol
+    - gpgtools
+    - keybase
   when: ansible_os_family == 'Darwin'
   tags: common
 
