@@ -2,3 +2,7 @@
 
 cd ~/.config.d
 vim .
+git commit -a
+
+# This is *kind* of silly - it should be replaced by asking whether to run the configuration again.
+configure "$@"
