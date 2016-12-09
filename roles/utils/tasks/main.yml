@@ -10,6 +10,7 @@
     - sloccount
     - autoenv
     - ripgrep
+    - jq
     #- hub
     #- s3cmd
     #- siege
