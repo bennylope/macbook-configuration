@@ -45,6 +45,7 @@
     - webstorm
     - postico
     - atom
+    - ngrok
   when: ansible_os_family == 'Darwin'
   tags: dev
 
