@@ -413,5 +413,8 @@ set ffs=unix,dos,mac
 " Map the key combo 'jk' to the Escape key
 :imap jk <Esc>
 
-set nu
-set rnu
+set number
+set relativenumber
+
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
