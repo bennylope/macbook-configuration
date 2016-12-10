@@ -410,4 +410,8 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
+" Map the key combo 'jk' to the Escape key
 :imap jk <Esc>
+
+set nu
+set rnu
