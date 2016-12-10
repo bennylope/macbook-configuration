@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Why this file, you ask? Because lazy.
+
 cd ~/.config.d
 vim .
 git commit -a

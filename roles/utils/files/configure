@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
+# Why this file, you ask? Because lazy.
+
 ansible-playbook ~/.config.d/local.yml -K -i ~/.config.d/hosts "$@"
