@@ -415,6 +415,3 @@ set ffs=unix,dos,mac
 
 set number
 set relativenumber
-
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
