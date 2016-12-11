@@ -11,6 +11,7 @@
     - autoenv
     - ripgrep
     - jq
+    - hledger
     #- hub
     #- s3cmd
     #- siege
