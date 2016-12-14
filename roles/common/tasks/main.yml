@@ -23,6 +23,7 @@
     - smcfancontrol
     - gpgtools
     - keybase
+    - java
   when: ansible_os_family == 'Darwin'
   tags: common
 
