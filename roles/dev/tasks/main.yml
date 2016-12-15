@@ -26,16 +26,6 @@
   when: ansible_os_family == 'Darwin'
   tags: dev
 
-- name: Virtualization for dev
-  homebrew_cask: name={{ item }} state=present
-  with_items:
-    - virtualbox
-    - vmware-fusion
-    - vagrant
-    - docker
-  when: ansible_os_family == 'Darwin'
-  tags: dev
-
 - name: Add development desktop tools
   homebrew_cask: name={{ item }} state=present
   with_items:
@@ -46,6 +36,16 @@
     - postico
     - atom
     - ngrok
+  when: ansible_os_family == 'Darwin'
+  tags: dev
+
+- name: Virtualization for dev
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - virtualbox
+    - vmware-fusion
+    - vagrant
+    - docker
   when: ansible_os_family == 'Darwin'
   tags: dev
 

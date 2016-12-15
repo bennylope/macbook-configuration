@@ -5,8 +5,6 @@
     - google-chrome
     - firefox
     - opera
-    - mailmate
-    - postbox
   when: ansible_os_family == 'Darwin'
   tags: common
 
