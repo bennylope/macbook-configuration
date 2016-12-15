@@ -29,7 +29,7 @@
 
 - name: Ensure oh-my-zsh-custom directory
   file:
-    name: ~/.oh-my-zsh
+    name: ~/.oh-my-zsh-custom
     state: directory
   tags: zsh
 
