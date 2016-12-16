@@ -17,6 +17,13 @@
   #  - libxml2
   #when: ansible_os_family == 'Darwin'
 
+- name: install dev CLI tools
+  homebrew: name={{ item }} state=present
+  with_items:
+    - heroku
+  when: ansible_os_family == 'Darwin'
+  tags: dev
+
 - name: install backing services (Mac)
   homebrew: name={{ item }} state=present
   with_items:
@@ -37,7 +44,6 @@
     - postico
     - atom
     - ngrok
-    - heroku
   when: ansible_os_family == 'Darwin'
   tags: dev
 
