@@ -38,5 +38,6 @@
     - skype
     - transmit
     - keepassx
+    - fluid
   when: ansible_os_family == 'Darwin'
   tags: common
