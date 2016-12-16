@@ -37,6 +37,7 @@
     - postico
     - atom
     - ngrok
+    - heroku
   when: ansible_os_family == 'Darwin'
   tags: dev
 
