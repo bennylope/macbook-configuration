@@ -5,6 +5,7 @@
     - libevent
     - libmemcached
     - libxml2
+    - libffi
     - gdal
     - gmp
   when: ansible_os_family == 'Darwin'
