@@ -57,6 +57,13 @@
   when: ansible_os_family == 'Darwin'
   tags: dev
 
+- name: Add ideavimrc
+  copy:
+    src: ideavimrc
+    dest: ~/.ideavimrc
+  when: ansible_os_family == 'Darwin'
+  tags: dev
+
 # These are libraries that are installed but the Homebrew *module* fails on;
 # not Homebrew by itself. At the end b/c they will fail but that's okay.
 # They're here to track config until the problem can be identified and solved.
