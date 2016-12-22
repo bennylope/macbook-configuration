@@ -18,6 +18,13 @@
   when: ansible_os_family == 'Darwin'
   tags: utils
 
+- name: Miscellany
+  homebrew: name={{ item }} state=present
+  with_items:
+    - privoxy
+  when: ansible_os_family == 'Darwin'
+  tags: utils
+
 - name: Add configuration script
   file:
     src: ~/.config.d/roles/utils/files/configure
