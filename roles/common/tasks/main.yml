@@ -22,6 +22,7 @@
     - gpgtools
     - keybase
     - java
+    - handbrake
   when: ansible_os_family == 'Darwin'
   tags: common
 
