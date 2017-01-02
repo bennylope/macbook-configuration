@@ -22,6 +22,7 @@
   homebrew: name={{ item }} state=present
   with_items:
     - privoxy
+    - android-platform-tools
   when: ansible_os_family == 'Darwin'
   tags: utils
 
