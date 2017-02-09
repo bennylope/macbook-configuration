@@ -51,3 +51,12 @@
   tags:
     - common
     - macos
+
+- name: Get current screenshot directory
+  command: defaults read com.apple.screencapture location
+  register: current_screenshot_directory
+  when: ansible_os_family == 'Darwin'
+  tags:
+    - common
+    - macos
+
