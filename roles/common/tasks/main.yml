@@ -42,3 +42,12 @@
     - fluid
   when: ansible_os_family == 'Darwin'
   tags: common
+
+- name: Configure screenshots
+  file:
+      path: "~/"
+      state: directory
+  when: ansible_os_family == 'Darwin'
+  tags:
+    - common
+    - macos
