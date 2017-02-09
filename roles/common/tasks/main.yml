@@ -43,9 +43,9 @@
   when: ansible_os_family == 'Darwin'
   tags: common
 
-- name: Configure screenshots
+- name: Add screenshots directory
   file:
-      path: "~/"
+      path: "~/Desktop/Screenshots"
       state: directory
   when: ansible_os_family == 'Darwin'
   tags:
