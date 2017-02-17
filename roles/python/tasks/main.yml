@@ -28,6 +28,7 @@
     - python3
     - python33
     - python34
+    - python35
     - pypy
   tags: python
 
