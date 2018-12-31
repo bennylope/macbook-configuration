@@ -1,8 +1,9 @@
 ---
 - name: install vim (Mac)
-  homebrew: name={{ item }} state=present
-  with_items:
-    - vim
+  homebrew:
+    name: 
+      - vim
+    state: present
   when: ansible_os_family == 'Darwin'
   tags: vim
 
@@ -14,9 +15,10 @@
   tags: vim
 
 - name: install neovim (Mac)
-  homebrew: name={{ item }} state=present
-  with_items:
-    - neovim
+  homebrew:
+    name:
+      - neovim
+    state: present
   when: ansible_os_family == 'Darwin'
   tags: vim
 

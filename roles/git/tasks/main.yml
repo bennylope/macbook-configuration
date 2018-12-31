@@ -1,9 +1,10 @@
 ---
 - name: install Git stuff
-  homebrew: name={{ item }} state=latest
-  with_items:
-    - git
-    - git-extras
-    - tig
+  homebrew:
+    name:
+      - git
+      - git-extras
+      - tig
+    state: latest
   when: ansible_os_family == 'Darwin'
   tags: git

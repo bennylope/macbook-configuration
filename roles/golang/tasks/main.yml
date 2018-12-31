@@ -1,6 +1,7 @@
 ---
 - name: install go (Mac)
-  homebrew: name={{ item }} state=present
-  with_items:
-    - go
+  homebrew:
+    name:
+      - go
+    state: present
   when: ansible_os_family == 'Darwin'

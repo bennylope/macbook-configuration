@@ -1,45 +1,48 @@
 ---
 - name: Add browsers
-  homebrew_cask: name={{ item }} state=present
-  with_items:
-    - google-chrome
-    - firefox
-    - opera
+  homebrew_cask:
+    name:
+      - firefox
+      - google-chrome
+      - opera
+    state: present
   when: ansible_os_family == 'Darwin'
   tags: common
 
 - name: Add desktop utility tools
-  homebrew_cask: name={{ item }} state=present
-  with_items:
-    - cloak
-    - dash
-    - alfred
-    - flux
-    - cleanmymac
-    - caffeine
-    - airfoil
-    - smcfancontrol
-    - gpgtools
-    - keybase
-    - java
-    - handbrake
+  homebrew_cask:
+    name:
+      - cloak
+      - dash
+      - alfred
+      - flux
+      - cleanmymac
+      - caffeine
+      - airfoil
+      - smcfancontrol
+      - gpgtools
+      - keybase
+      - java
+      - handbrake
+    state: present
   when: ansible_os_family == 'Darwin'
   tags: common
 
 - name: Add general desktop tools
-  homebrew_cask: name={{ item }} state=present
-  with_items:
-    - iterm2
-    - libreoffice
-    - balsamiq-mockups
-    - airfoil
-    - dropbox
-    - google-drive
-    - send-to-kindle
-    - skype
-    - transmit
-    - keepassx
-    - fluid
+  homebrew_cask:
+    name:
+      - iterm2
+      - libreoffice
+      - balsamiq-mockups
+      - airfoil
+      - dropbox
+      - google-drive
+      - send-to-kindle
+      - skype
+      - transmit
+      - keepassx
+      - fluid
+    state: present
   when: ansible_os_family == 'Darwin'
   tags: common
 

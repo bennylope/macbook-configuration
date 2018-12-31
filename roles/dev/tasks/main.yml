@@ -1,13 +1,14 @@
 ---
 - name: install development libraries (Mac)
-  homebrew: name={{ item }} state=present
-  with_items:
-    - libevent
-    - libmemcached
-    - libxml2
-    - libffi
-    - gdal
-    - gmp
+  homebrew:
+    name: 
+      - libevent
+      - libmemcached
+      - libxml2
+      - libffi
+      - gdal
+      - gmp
+    state: present
   when: ansible_os_family == 'Darwin'
   tags: dev
 
@@ -18,42 +19,55 @@
   #when: ansible_os_family == 'Darwin'
 
 - name: install dev CLI tools
-  homebrew: name={{ item }} state=present
-  with_items:
-    - heroku
+  homebrew:
+    name:
+      - heroku
+    state: present
   when: ansible_os_family == 'Darwin'
   tags: dev
 
+- name: install testing tools
+  homebrew: 
+    name:
+      - chromedriver
+    state: present
+  when: ansible_os_family == 'Darwin'
+  tags:
+    - dev
+    - testing
+
 - name: install backing services (Mac)
-  homebrew: name={{ item }} state=present
-  with_items:
-    - redis
-    - memcached
-    - mysql
-      #- elasticsearch
+  homebrew:
+    name: 
+      - redis
+      - memcached
+      - mysql
+        #- elasticsearch
+    state: present
   when: ansible_os_family == 'Darwin'
   tags: dev
 
 - name: Add development desktop tools
-  homebrew_cask: name={{ item }} state=present
-  with_items:
-    - pycharm
-    - sequel-pro
-    - phpstorm
-    - webstorm
-    - postico
-    - atom
-    - ngrok
+  homebrew_cask:
+    name:
+      - pycharm
+      - sequel-pro
+      - phpstorm
+      - webstorm
+      - postico
+      - ngrok
+    state: present
   when: ansible_os_family == 'Darwin'
   tags: dev
 
 - name: Virtualization for dev
-  homebrew_cask: name={{ item }} state=present
-  with_items:
-    - virtualbox
-    - vmware-fusion
-    - vagrant
-    - docker
+  homebrew_cask:
+    name:
+      - virtualbox
+      - vmware-fusion
+      - vagrant
+      - docker
+    state: present
   when: ansible_os_family == 'Darwin'
   tags: dev
 

@@ -6,9 +6,9 @@
   tags: python
 
 - name: Install virtualenvwrapper
-  pip: name={{ item }}
-  with_items:
-    - virtualenvwrapper
+  pip:
+    name: 
+      - virtualenvwrapper
   tags: python
 
 - name: Install OpenSSL for Python
@@ -22,14 +22,15 @@
   tags: python
 
 - name: Install Python versions
-  homebrew: name={{ item }} state=present
-  with_items:
-    - python
-    - python3
-    - python33
-    - python34
-    - python35
-    - pypy
+  homebrew:
+    name:
+      - python
+      - python3
+      - python33
+      - python34
+      - python35
+      - pypy
+    state: present
   tags: python
 
 - name: Add pip directory

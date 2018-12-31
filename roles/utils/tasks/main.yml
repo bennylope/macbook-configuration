@@ -1,29 +1,31 @@
 ---
 - name: install CLI tools
-  homebrew: name={{ item }} state=present
-  with_items:
-    - tree
-    - readline
-    - wget
-    - ack
-    - ctags
-    - sloccount
-    - autoenv
-    - ripgrep
-    - jq
-    - hledger
-    - mutt
-    #- hub
-    #- s3cmd
-    #- siege
+  homebrew: 
+    name:
+      - tree
+      - readline
+      - wget
+      - ack
+      - ctags
+      - sloccount
+      - autoenv
+      - ripgrep
+      - jq
+      - hledger
+      - mutt
+      #- hub
+      #- s3cmd
+      #- siege
+    state: present
   when: ansible_os_family == 'Darwin'
   tags: utils
 
 - name: Miscellany
-  homebrew: name={{ item }} state=present
-  with_items:
-    - privoxy
-    - android-platform-tools
+  homebrew:
+    name:
+      - privoxy
+      - android-platform-tools
+    state: present
   when: ansible_os_family == 'Darwin'
   tags: utils
 

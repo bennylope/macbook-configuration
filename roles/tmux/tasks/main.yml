@@ -1,10 +1,9 @@
 ---
 - name: install tmux
   homebrew:
-    name: "{{ item }}"
+    name: 
+      - tmux
     state: latest
-  with_items:
-    - tmux
   when: ansible_os_family == 'Darwin'
   tags: tmux
 
