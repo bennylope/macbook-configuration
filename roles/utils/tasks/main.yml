@@ -12,6 +12,7 @@
     - ripgrep
     - jq
     - hledger
+    - mutt
     #- hub
     #- s3cmd
     #- siege
