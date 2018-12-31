@@ -57,4 +57,5 @@
     - { repo: "https://github.com/vim-syntastic/syntastic.git", name: "syntastic" }
     - { repo: "https://github.com/altercation/vim-colors-solarized.git", name: "solarized" }
     - { repo: "https://github.com/nvie/vim-flake8.git", name: "flake8" }
+    - { repo: "https://github.com/davidhalter/jedi-vim.git", name: "jedi-vim" }
   tags: vim
