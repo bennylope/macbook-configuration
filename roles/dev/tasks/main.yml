@@ -22,6 +22,11 @@
   homebrew:
     name:
       - heroku
+      - rg
+      - bat
+      - z
+      - fd
+      - exa
     state: present
   when: ansible_os_family == 'Darwin'
   tags: dev
