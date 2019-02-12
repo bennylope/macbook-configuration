@@ -50,7 +50,7 @@ repository. That collection is far more complete.
 
 I later borrowed some bootstrap scripting from Daniel Jaouen's
 blog post, [How I Fully Automated OS X Provisioning With
-Ansible](http://il.luminat.us/blog/2014/04/19/how-i-fully-automated-os-x-with-ansible/).
+Ansible](http://il.luminat.us/2014/04/19/how-i-fully-automated-os-x-with-ansible.html).
 
 ### License
 
