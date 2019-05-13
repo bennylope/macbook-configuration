@@ -81,7 +81,13 @@
   copy:
     src: ideavimrc
     dest: ~/.ideavimrc
-  when: ansible_os_family == 'Darwin'
+  tags: dev
+
+- name: Add DB restoration helper
+  copy:
+    src: create_db_restore.sh
+    dest: ~/create_db_restore.sh
+    mode: preserve
   tags: dev
 
 # These are libraries that are installed but the Homebrew *module* fails on;
