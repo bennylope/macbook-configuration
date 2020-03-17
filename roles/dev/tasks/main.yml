@@ -27,6 +27,7 @@
       - z
       - fd
       - exa
+      - shellcheck
     state: present
   when: ansible_os_family == 'Darwin'
   tags: dev
