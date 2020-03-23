@@ -58,8 +58,6 @@
     name:
       - pycharm
       - sequel-pro
-      - phpstorm
-      - webstorm
       - postico
       - ngrok
       - aws-vault
@@ -71,7 +69,6 @@
   homebrew_cask:
     name:
       - virtualbox
-      - vmware-fusion
       - vagrant
       - docker
     state: present
