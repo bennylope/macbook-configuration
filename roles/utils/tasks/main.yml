@@ -24,7 +24,6 @@
   homebrew:
     name:
       - privoxy
-      - android-platform-tools
     state: present
   when: ansible_os_family == 'Darwin'
   tags: utils
