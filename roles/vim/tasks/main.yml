@@ -54,11 +54,11 @@
 - name: install vim plugins
   git: repo={{ item.repo}} dest=~/.vim/bundle/{{ item.name }}
   with_items:
-    - { repo: "https://github.com/scrooloose/nerdtree.git", name: "nerdtree" }
-    - { repo: "https://github.com/ctrlpvim/ctrlp.vim.git", name: "ctrlp" }
-    - { repo: "https://github.com/vim-syntastic/syntastic.git", name: "syntastic" }
-    - { repo: "https://github.com/altercation/vim-colors-solarized.git", name: "solarized" }
-    - { repo: "https://github.com/nvie/vim-flake8.git", name: "flake8" }
-    - { repo: "https://github.com/davidhalter/jedi-vim.git", name: "jedi-vim" }
-    - { repo: "https://github.com/jremmen/vim-ripgrep", name: "vim-ripgrep" }
+    - { repo: "https://github.com/scrooloose/nerdtree.git", name: "nerdtree", force: "yes" }
+    - { repo: "https://github.com/ctrlpvim/ctrlp.vim.git", name: "ctrlp", force: "yes" }
+    - { repo: "https://github.com/vim-syntastic/syntastic.git", name: "syntastic", force: "yes" }
+    - { repo: "https://github.com/altercation/vim-colors-solarized.git", name: "solarized", force: "yes" }
+    - { repo: "https://github.com/nvie/vim-flake8.git", name: "flake8", force: "yes" }
+    - { repo: "https://github.com/davidhalter/jedi-vim.git", name: "jedi-vim", force: "yes" }
+    - { repo: "https://github.com/jremmen/vim-ripgrep", name: "vim-ripgrep", force: "yes" }
   tags: vim
